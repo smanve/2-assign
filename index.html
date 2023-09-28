@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+
+
+<!-- ///////////////////  HEAD //////////////////////////////////// -->
+
+<head>
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+
+<!-- This line will change the appearance of the page-->
+<link href="style.css" rel="stylesheet">
+
+<!-- This line will change the font of the page -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+</style>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+</style>
+
+<!-- Meta stuff-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+
+<!-- ///////////////////  HEAD //////////////////////////////////// -->
+
+
+
+<!-- ///////////////////  START BODY //////////////////////////////////// -->
+
+<body>
+
+    <div class="header">
+        <h2><span style="color:rgb(203, 228, 50)">Data</span><span style="color:rgb(38, 52, 9)">Science</span></h2>
+    </div>
+
+    <div class="containerHomeScreen">
+        <button class="button4" onclick="window.location.href = 'index'">Home</button>
+        <button class="button4" onclick="window.location.href = 'project'">Project</button>
+        <button class="button5" onclick="location.href = 'https://github.com/jamesjeffery77/jamesjeffery77.github.io'">GitHub</button>
+    </div>
+    
+    <!-- This task involved embedding three charts onto my webpage, two of which were given in class,
+    the third was taken from the rapidcharts.io repository-->    
+    <div class="containertext">
+    <h3> Week 1 - Embedding Charts </h3>
+    </div>
+
+
+    <div class="container">
+    <!--chart1 - Data was used from example in class-->
+        <div class="chart" id="chart1">
+            <script>
+            var myChart1 = "week1/CovidCasesUKRegions.json";
+            vegaEmbed('#chart1', myChart1);
+            </script>
+        </div>
+
+        <!--chart2 - Data was used from example in class-->
+        <div class="chart" id="chart2">
+            <script>
+                var myChart2 = "week1/UKProductivity.json";
+                vegaEmbed('#chart2', myChart2);
+            </script>
+        </div>
+        
+        <!--chart3 - I downloaded the chart from Richard's repository, and downloaded it onto my page-->
+        <div class="chart" id="chart3">
+            <script>
+                var myChart3 = "week1/Innovation.json";
+                vegaEmbed('#chart3', myChart3);
+            </script>
+        </div>
+    </div>
+    
+    
+    <h3> Week 2 - Hosting Data </h3>
+    <div class="container">
+        
+        <!--chart4 - This chart uses an API to get data-->
+        <div class="chart" id="chart4">
+            <script>
+                var myChart4 = "week2/covidCasesByRegion.json";
+                vegaEmbed('#chart4', myChart4);
+            </script>
+        </div>
+
+        <!--chart5 - This chart uses raw data-->
+        <div class="chart" id="chart5">
+            <script>
+                var myChart5 = "week2/covidCasesByRegion2.json";
+                vegaEmbed('#chart5', myChart5);
+            </script>
+        </div>
+    </div>
+
+
+    <h3> Week 3 - Editing data, writing JSON by hand </h3>
+    <div class="container">
+        
+        <!--chart6 - I have changed the underlying CSV data-->
+        <!--I downloaded the data from Richard's github, renamed it to be mine, added a data point to the bottom, and then uploaded it back onto my github-->
+        <div class="chart" id="chart6">
+            <script>
+                var myChart6 = "week3/myEnvironmentChart.json";
+                vegaEmbed('#chart6', myChart6);
+            </script>
+        </div>
+
+        <!--chart7 - inputting JSON data manually -->
+        <!--I downloaded the json file from Richard's github, and then added the raw csv data straight onto it-->
+        <div class="chart" id="chart7">
+            <script>
+                var myChart7 = "week3/myEndangeredSpeciesData.json";
+                vegaEmbed('#chart7', myChart7);
+            </script>
+        </div>
+    </div>
+
+
+    <h3> Week 4 - API Driven Charts </h3>
+    <div class="container">
+
+        <!-- chart8 - using API I have found -->
+        <div class="chart" id="chart8">
+            <script>
+                var myChart8 = "week4/API_IBM.json";
+                vegaEmbed('#chart8', myChart8);
+            </script>
+        </div>
+        
+        <!--chart9 - using API I have found -->
+        <div class="chart" id="chart9">
+            <script>
+                var myChart9 = "carbonIntensityAPI.json";
+                vegaEmbed('#chart9', myChart9);
+            </script>
+        </div>
+    </div>
+
+  
+    <h3> Week 5 - Loops and APIs </h3>
+    <p> Colab file <a href="https://colab.research.google.com/drive/1kYjbot3HVGHsdV9lyNlADWHdo4Olbege?usp=sharing"> here </a> </p>
+      <div class="container">
+
+          <!--chart10 - using loops to download API data -->
+          <div class="chart" id="chart10">
+              <script>
+                  var myChart10 = "week5/FRED-DEXUSUK.json";
+                  vegaEmbed('#chart10', myChart10);
+              </script>
+          </div>
+
+          <!--chart11 -  using loops to download API data -->
+          <div class="chart" id="chart11">
+              <script>
+                  var myChart11 = "week5/FRED-EMPUKQ.json";
+                  vegaEmbed('#chart11', myChart11);
+              </script>
+          </div>
+
+          <!--chart12 using loops to download API data -->
+          <div class="chart" id="chart12">
+              <script>
+                  var myChart12 = "week5/FRED-IRLTLT01GBM156N.json";
+                  vegaEmbed('#chart12', myChart12);
+              </script>
+          </div>
+
+          <!--chart13 using loops to download API data -->
+          <div class="chart" id="chart13">
+              <script>
+                  var myChart13 = "week5/FRED-T10YIE.json";
+                  vegaEmbed('#chart13', myChart13);
+              </script>
+          </div>
+      </div>
+    
+   
+    <h3> Week 7 - Loops and Scrapers </h3>
+    
+    <p> Data scraped <a href="https://colab.research.google.com/drive/16aHZkh8x-naBla_2HpbDb4iCDnaBD0Bn?usp=sharing"> here.</a></p>
+    <div class="container">
+        
+        <!--chart14 - data was scraped from wikipedia-->
+        <div class="chart" id="chart14">
+            <script>
+                var myChart14 = "week7/CO2EmissionValue.json";
+                vegaEmbed('#chart14', myChart14);
+            </script>
+        </div>
+    </div>
+    
+    <h3> Week 8 - Talking Economics:</h3>
+    <h4> At the economics conference, Grant Fitzner made this statement - "There has been a large shift towards primarily online orders" This ONS data supports his claim.</h4>
+    <p> For some reason the line doesn't appear on apple phones but works on laptops and android </p>
+    <div class="container">
+        <!--chart15 - data found from ONS-->
+        <div class="chart" id="chart15">
+            <script>
+                var myChart15 = "week8/InternetSales.json";
+                vegaEmbed('#chart15', myChart15);
+            </script>
+        </div>
+    </div>
+    
+    <h3> Week 9 - Advanced Analytics</h3>
+    <div class="container">
+        <!--chart16 - regression was performed in python, data sourced from the World Bank and OurWorldInData-->
+        <div class="chart" id="chart16">
+            <script>
+                var myChart16 = "UK_regression.json";
+                vegaEmbed('#chart16', myChart16);
+            </script>
+        </div>
+    </div>
+    
+    <h3> Week 10 - Interactive Chart </h3>
+    <div class="container">
+        <!--chart17 - data found from worldindata.org-->
+        <div class="chart" id="chart17">
+            <script>
+                var myChart17 = "ElectricitySourcePercentage.json";
+                vegaEmbed('#chart17', myChart17);
+            </script>
+        </div>
+      <!--chart18 - data found from worldindata.org-->
+        <div class="chart" id="chart18">
+            <script>
+                var myChart18 = "world_map_slider.json";
+                vegaEmbed('#chart18', myChart18);
+            </script>
+        </div>
+    </div>
+</body>
+<!-- ///////////////////  END BODY //////////////////////////////////// -->
+
+</html>
