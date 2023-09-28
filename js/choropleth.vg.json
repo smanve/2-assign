@@ -17,11 +17,11 @@
     "background": null,
     "config": {"style": {"cell": {"stroke": "transparent"}}},
     "data": {
-      "url": "https://raw.githubusercontent.com//jamesjeffery77/jamesjeffery77.github.io/main/ShareElectricityRenewables.csv"
+      "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/annual-change-renewables.csv"
     },
     "transform": [
       {
-        "lookup": "country",
+        "lookup": "Entity",
         "from": {
           "data": {
             "url": "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries-sans-antarctica.json",
@@ -36,7 +36,7 @@
     "params": [
       {
         "name": "year",
-        "value": 2019,
+        "value": 2020,
         "bind": {
           "input": "range",
           "min": 1985,
