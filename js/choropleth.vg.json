@@ -12,35 +12,35 @@
       "anchor": "start",
       "color": "black"
     },
-    "width": 280,
-    "height": 300,
+    "width": 800,
+    "height": 400,
     "background": null,
     "config": {"style": {"cell": {"stroke": "transparent"}}},
     "data": {
-      "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/annual-change-renewables.csv"
+      "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/per-capita-energy-use.csv"
     },
     "transform": [
       {
         "lookup": "Entity",
         "from": {
           "data": {
-            "url": "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries-sans-antarctica.json",
-            "format": {"type": "topojson", "feature": "countries1"}
+            "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+            "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
           },
-          "key": "properties.name",
+          "key": "properties.NAME",
           "fields": ["properties", "type", "geometry"]
         }
       },
-      {"filter": "datum.Year==year"}
+      {"filter": "datum.Year==Year"}
     ],
     "params": [
       {
-        "name": "year",
+        "name": "Year",
         "value": 2020,
         "bind": {
           "input": "range",
-          "min": 1985,
-          "max": 2019,
+          "min": 1966,
+          "max": 2020,
           "step": 1,
           "name": "Select the year:"
         }
@@ -49,10 +49,10 @@
     "projection": {"type": "equalEarth"},
     "mark": "geoshape",
     "encoding": {
-      "color": {"field": "percentage", "type": "quantitative"},
+      "color": {"field": "Primary energy consumption per capita (kWh/person)", "type": "quantitative"},
       "tooltip": [
-        {"field": "properties.name", "type": "nominal", "title": "Country"},
-        {"field": "percentage", "type": "quantitative"}
+        {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+        {"field": "Primary energy consumption per capita (kWh/person)", "type": "quantitative"}
       ]
     }
   }
