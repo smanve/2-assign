@@ -1,0 +1,80 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/yourdata.csv"
+    },
+    "width": 800,
+    "height": 400,
+    "transform": [
+      {
+        "filter": "datum.Year >= Year[0] && datum.Year <= Year[1]"
+      }
+    ],
+    "layer": [
+      {
+        "mark": "point",
+        "encoding": {
+          "x": {
+            "field": "Access to electricity (% of population)",
+            "type": "quantitative",
+            "scale": {"zero": false},
+            "title": "Access to Electricity (%)"
+          },
+          "y": {
+            "field": "Primary energy consumption per capita (kWh/person)",
+            "type": "quantitative",
+            "scale": {"zero": false},
+            "title": "Energy Consumption per Capita (kWh/person)"
+          },
+          "tooltip": [
+            {"field": "Entity", "type": "nominal"},
+            {"field": "Year", "type": "ordinal"},
+            {
+              "field": "Access to electricity (% of population)",
+              "type": "quantitative",
+              "title": "Access to Electricity (%)"
+            },
+            {
+              "field": "Primary energy consumption per capita (kWh/person)",
+              "type": "quantitative",
+              "title": "Energy Consumption per Capita (kWh/person)"
+            }
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "dx": 5,
+          "dy": -5,
+          "fontSize": 10
+        },
+        "encoding": {
+          "text": {"field": "Entity", "type": "nominal"},
+          "x": {
+            "field": "Access to electricity (% of population)",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Primary energy consumption per capita (kWh/person)",
+            "type": "quantitative"
+          }
+        }
+      }
+    ],
+    "params": [
+      {
+        "name": "Year",
+        "value": [2000, 2020],
+        "bind": {
+          "input": "range",
+          "min": 2000,
+          "max": 2020,
+          "step": 1,
+          "name": "Year Range"
+        }
+      }
+    ]
+  }
+  
