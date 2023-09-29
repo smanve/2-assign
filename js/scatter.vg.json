@@ -1,13 +1,26 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
-      "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/yourdata.csv"
+      "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/global-data-on-sustainable-energy%20(1).csv"
     },
     "width": 800,
     "height": 400,
+    "params": [
+      {
+        "name": "Year",
+        "value": [2000, 2020],
+        "bind": {
+          "input": "range",
+          "min": 2000,
+          "max": 2020,
+          "step": 1,
+          "name": "Year Range"
+        }
+      }
+    ],
     "transform": [
       {
-        "filter": "datum.Year >= Year[0] && datum.Year <= Year[1]"
+        "filter": "datum.Year==Year"
       }
     ],
     "layer": [
@@ -26,6 +39,7 @@
             "scale": {"zero": false},
             "title": "Energy Consumption per Capita (kWh/person)"
           },
+          "color": {"field": "Entity", "type": "nominal", "legend": null},
           "tooltip": [
             {"field": "Entity", "type": "nominal"},
             {"field": "Year", "type": "ordinal"},
@@ -43,13 +57,12 @@
         }
       },
       {
-        "mark": {
-          "type": "text",
-          "align": "left",
-          "dx": 5,
-          "dy": -5,
-          "fontSize": 10
-        },
+        "mark": {"type": "text", "align": "left", "dx": 5, "dy": -5, "fontSize": 2},
+        "transform": [
+          {
+            "filter": "datum['Primary energy consumption per capita (kWh/person)'] > 10000 || datum['Access to electricity (% of population)'] > 75"
+          }
+        ],
         "encoding": {
           "text": {"field": "Entity", "type": "nominal"},
           "x": {
@@ -60,19 +73,6 @@
             "field": "Primary energy consumption per capita (kWh/person)",
             "type": "quantitative"
           }
-        }
-      }
-    ],
-    "params": [
-      {
-        "name": "Year",
-        "value": [2000, 2020],
-        "bind": {
-          "input": "range",
-          "min": 2000,
-          "max": 2020,
-          "step": 1,
-          "name": "Year Range"
         }
       }
     ]
