@@ -1,0 +1,110 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Global Energy Access, GDP and Renewable Energy Share (2000-2020)",
+    "data": {"url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/merged_data.csv"},
+    "vconcat": [
+      {
+        "width": 800,
+        "height": 300,
+        "layer": [
+          {
+            "data": {
+              "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+              "format": {"type": "topojson", "feature": "countries"}
+            },
+            "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "white"},
+            "projection": {"type": "identity", "reflectY": true}
+          },
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/WorldMapWithGraticules.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "ne_110m_graticules_30"
+              }
+            },
+            "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+          },
+          {
+            "transform": [{"filter": "datum.Continent !== null && datum.Continent !== ''"}],
+            "mark": "circle",
+            "encoding": {
+              "longitude": {"field": "Longitude", "type": "quantitative"},
+              "latitude": {"field": "Latitude", "type": "quantitative"},
+              "size": {
+                "field": "Access to electricity (% of population)",
+                "type": "quantitative",
+                "scale": {"range": [0, 1000]},
+                "legend": {"title": "Access to Electricity (%)"}
+              },
+              "color": {
+                "field": "Continent",
+                "type": "nominal",
+                "scale": {"scheme": "tableau10"},
+                "legend": {"title": "Continent"}
+              },
+              "tooltip": [
+                {"field": "Entity", "type": "nominal"},
+                {"field": "Access to electricity (% of population)", "type": "quantitative"}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "width": 800,
+        "height": 200,
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "Entity",
+            "type": "ordinal",
+            "axis": {"title": "Country", "labelAngle": -45}
+          },
+          "y": {
+            "field": "gdp_per_capita",
+            "type": "quantitative",
+            "axis": {"title": "GDP per Capita"}
+          },
+          "color": {
+            "field": "Continent",
+            "type": "nominal",
+            "scale": {"scheme": "tableau10"},
+            "legend": null
+          },
+          "tooltip": [
+            {"field": "Entity", "type": "nominal"},
+            {"field": "gdp_per_capita", "type": "quantitative"}
+          ]
+        }
+      },
+      {
+        "width": 800,
+        "height": 200,
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "temporal",
+            "axis": {"title": "Year"}
+          },
+          "y": {
+            "field": "Renewable energy share in the total final energy consumption (%)",
+            "type": "quantitative",
+            "axis": {"title": "Renewable Energy Share (%)"}
+          },
+          "color": {
+            "field": "Continent",
+            "type": "nominal",
+            "scale": {"scheme": "tableau10"},
+            "legend": {"title": "Continent"}
+          },
+          "tooltip": [
+            {"field": "Entity", "type": "nominal"},
+            {"field": "Renewable energy share in the total final energy consumption (%)", "type": "quantitative"}
+          ]
+        }
+      }
+    ]
+  }
+  
