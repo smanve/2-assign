@@ -1,84 +1,84 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-      "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/merged_data.csv"
-    },
-    "width": 800,
-    "height": 400,
-    "params": [
-      {
-        "name": "Year",
-        "value": 2020,
-        "bind": {
-          "input": "range",
-          "min": 2000,
-          "max": 2020,
-          "step": 1,
-          "name": "Select Year"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/merged_data.csv"
+  },
+  "width": 800,
+  "height": 400,
+  "params": [
+    {
+      "name": "Year",
+      "value": 2020,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2020,
+        "step": 1,
+        "name": "Select Year"
+      }
+    }
+  ],
+  "projection": {"type": "equalEarth"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      },
+      "mark": {"type": "geoshape", "stroke": "white", "fill": "lightgrey"},
+      "encoding": {
+        "tooltip": {
+          "value": "No values present for this country."
         }
       }
-    ],
-    "transform": [
-      {
-        "filter": "datum.Year == Year"
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+        "format": {"type": "topojson", "feature": "oceans"}
       },
-      {
-        "filter": "datum.Continent !== null && datum.Continent !== ''"
-      }
-    ],
-    "projection": {"type": "equalEarth", "rotate": [-150, 0, 0]},
-    "layer": [
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson",
-          "format": {
-            "type": "topojson",
-            "feature": "ne_110m_admin_0_countries"
+      "mark": {"type": "geoshape", "fill": "skyblue"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/merged_data.csv"
+      },
+      "transform": [
+        {
+          "lookup": "Entity",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson",
+              "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+            },
+            "key": "properties.NAME",
+              "fields": ["properties", "type", "geometry"]
           }
         },
-        "mark": {
-          "type": "geoshape",
-          "fill": "lightgray",
-          "stroke": "white"
-        }
+        {"filter": "datum.Year==Year"}
+      ],
+      "mark": {
+        "type": "geoshape"
       },
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
-          "format": {"type": "topojson", "feature": "oceans"}
-        },
-        "mark": {"type": "geoshape", "fill": "skyblue"}
-      },
-      {
-        "mark": {"type": "circle", "opacity": 0.7, "stroke": "black", "strokeWidth": 1},
-        "encoding": {
-          "longitude": {
-            "field": "Longitude",
-            "type": "quantitative"
-          },
-          "latitude": {
-            "field": "Latitude",
-            "type": "quantitative"
-          },
-          "color": {
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "datum['Access to electricity (% of population)'] !== null",
             "field": "Access to electricity (% of population)",
             "type": "quantitative",
-            "scale": {"scheme": "viridis"},
-            "legend": {
-              "title": "Access to Electricity (%)"
-            }
+            "scale": {"scheme": "viridis"}
           },
-          "size": {
-            "field": "Primary energy consumption per capita (kWh/person)",
+          "value": "rgba(128,128,128,0.2)"
+        },
+        "tooltip": [
+          {"field": "Entity", "type": "nominal", "title": "Country"},
+          {
+            "field": "Access to electricity (% of population)",
             "type": "quantitative",
-            "legend": {"title": "Energy Consumption per Capita (kWh/person)"}
-          },
-          "tooltip": [
-            {"field": "Entity", "type": "nominal", "title": "Country"},
-            {"field": "Access to electricity (% of population)", "type": "quantitative", "title": "Access to Electricity (%)"},
-            {"field": "Primary energy consumption per capita (kWh/person)", "type": "quantitative", "title": "Energy Consumption per Capita (kWh/person)"}
-          ]
-        }
+            "title": "Access to Electricity (%)"
+          }
+        ]
       }
-    ]
+    }
+  ]
 }

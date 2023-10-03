@@ -1,120 +1,120 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-      "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/merged_data.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/merged_data.csv"
+  },
+  "width": 800,
+  "height": 400,
+  "params": [
+    {
+      "name": "Year",
+      "value": 2020,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2020,
+        "step": 1,
+        "name": "Select Year"
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.Year == Year"
     },
-    "width": 800,
-    "height": 400,
-    "params": [
-      {
-        "name": "Year",
-        "value": 2020,
-        "bind": {
-          "input": "range",
-          "min": 2000,
-          "max": 2020,
-          "step": 1,
-          "name": "Select Year"
-        }
-      }
-    ],
-    "transform": [
-      {
-        "filter": "datum.Year == Year"
+    {
+      "filter": "datum.Continent !== null && datum.Continent !== ''"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Access to electricity (% of population)",
+      "type": "quantitative",
+      "scale": {"zero": false},
+      "axis": {"tickCount": 7},
+      "title": "Access to Electricity (%)"
+    },
+    "y": {
+      "field": "Primary energy consumption per capita (kWh/person)",
+      "type": "quantitative",
+      "scale": {"zero": false},
+      "axis": {"tickCount": 7},
+      "title": "Energy Consumption per Capita (kWh/person)"
+    }},
+  "layer":[{
+  "mark": {"type":"point","filled": true},
+  "encoding": {
+    "color": {
+      "field": "Continent",
+      "type": "nominal",
+      "title": "Continent",
+      "legend": {
+        "title": "Continent",
+        "offset": 50
       },
-      {
-        "filter": "datum.Continent !== null && datum.Continent !== ''"
+      "scale": {
+        "scheme": "tableau10"
       }
-    ],
-    "encoding": {
-      "x": {
+    },
+    "size": {
+      "field": "gdp_per_capita",
+      "type": "quantitative",
+      "title": "GDP per Capita",
+      "scale": {
+        "domain": [10000,100000],
+        "range": [100, 500]
+      },
+      "legend": {"format": ".1s"}
+    },
+    "tooltip": [
+      {"field": "Entity", "type": "nominal", "title": "Country"},
+      {"field": "Year", "type": "ordinal", "title": "Year"},
+      {
         "field": "Access to electricity (% of population)",
         "type": "quantitative",
-        "scale": {"zero": false},
-        "axis": {"tickCount": 7},
         "title": "Access to Electricity (%)"
       },
-      "y": {
+      {
         "field": "Primary energy consumption per capita (kWh/person)",
         "type": "quantitative",
-        "scale": {"zero": false},
-        "axis": {"tickCount": 7},
         "title": "Energy Consumption per Capita (kWh/person)"
-      }},
-    "layer":[{
-    "mark": {"type":"point","filled": true},
-    "encoding": {
-      "color": {
-        "field": "Continent",
-        "type": "nominal",
-        "title": "Continent",
-        "legend": {
-          "title": "Continent",
-          "offset": 50
-        },
-        "scale": {
-          "scheme": "tableau10"
-        }
       },
-      "size": {
-        "field": "gdp_per_capita",
-        "type": "quantitative",
-        "title": "GDP per Capita",
-        "scale": {
-          "domain": [10000,100000],
-          "range": [50, 500]
-        },
-        "legend": {"format": ".1s"}
+      {"field": "gdp_per_capita", "type": "quantitative", "title": "GDP per Capita"}
+    ]
+  }
+  },
+{"mark": {
+  "type": "text",
+  "align": "right",
+  "baseline": "middle",
+  "dx": -12,
+  "fontSize": 11.5,
+  "fontStyle": "italic"
+  },
+  "encoding": {
+  "text": {"field": "Entity", "type": "nominal"},
+  "color": {"value": "black"},
+  "opacity": {"condition": {
+    "test": "datum['Entity'] == 'Qatar' || datum['Entity'] == 'Libya' || datum['Entity'] == 'China' || datum['Entity'] =='Singapore' || datum['Entity'] == 'Australia' || datum['Entity'] =='New Zealand' || datum['Entity'] =='Namibia' || datum['Entity'] == 'United States'",
+    "value": 1
+    },
+    "value": 0
+    },"tooltip": [
+      {"field": "Entity", "type": "nominal"},
+      {"field": "Year", "type": "ordinal"},
+      {
+        "field": "Access to electricity (% of population)",
+        "type": "quantitative"
       },
-      "tooltip": [
-        {"field": "Entity", "type": "nominal", "title": "Country"},
-        {"field": "Year", "type": "ordinal", "title": "Year"},
-        {
-          "field": "Access to electricity (% of population)",
-          "type": "quantitative",
-          "title": "Access to Electricity (%)"
-        },
-        {
-          "field": "Primary energy consumption per capita (kWh/person)",
-          "type": "quantitative",
-          "title": "Energy Consumption per Capita (kWh/person)"
-        },
-        {"field": "gdp_per_capita", "type": "quantitative", "title": "GDP per Capita"}
+      {
+        "field": "Primary energy consumption per capita (kWh/person)",
+        "type": "quantitative"
+      },
+      {"field": "gdp_per_capita", "type": "quantitative"}
       ]
-    }
-    },
-  {"mark": {
-    "type": "text",
-    "align": "right",
-    "baseline": "middle",
-    "dx": -12,
-    "fontSize": 11.5,
-    "fontStyle": "italic"
-    },
-    "encoding": {
-    "text": {"field": "Entity", "type": "nominal"},
-    "color": {"value": "black"},
-    "opacity": {"condition": {
-      "test": "datum['Entity'] == 'China' || datum['Entity'] =='Singapore' || datum['Entity'] == 'Australia' || datum['Entity'] =='New Zealand' || datum['Entity'] =='Yemen' || datum['Entity'] == 'United States'",
-      "value": 1
-      },
-      "value": 0
-      },"tooltip": [
-        {"field": "Entity", "type": "nominal"},
-        {"field": "Year", "type": "ordinal"},
-        {
-          "field": "Access to electricity (% of population)",
-          "type": "quantitative"
-        },
-        {
-          "field": "Primary energy consumption per capita (kWh/person)",
-          "type": "quantitative"
-        },
-        {"field": "gdp_per_capita", "type": "quantitative"}
-        ]
-        }
       }
+    }
 
-  
-  
-  ]}
+
+
+]}
