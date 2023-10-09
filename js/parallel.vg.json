@@ -54,7 +54,7 @@
       {
         "mark": {"type": "rule", "color": "#ccc"},
         "encoding": {
-          "x": {"type": "ordinal", "field": "key", "sort": null}
+          "x": {"type": "ordinal", "field": "key", "sort": null, "axis": {"labelAngle": -45, "title": null, "labels": true, "labelExpr": "datum.label === 'Access to electricity (% of population)' ? 'Electricity Access (%)' : datum.label === 'Access to clean fuels for cooking' ? 'Clean Fuels (%)' : datum.label === 'Low-carbon electricity (% electricity)' ? 'Low-carbon Elec. (%)' : datum.label === 'Renewable-electricity-generating-capacity-per-capita_normalized' ? 'Renewable Electricity (%)' : 'Primary Energy Use (%)'"}}
         }
       },
       {
@@ -77,11 +77,10 @@
           },
           "detail": {"type": "nominal", "field": "Entity"},
           "x": {"type": "ordinal", "field": "key", "sort": null},
-          "y": {"type": "quantitative", "field": "valid_value", "scale": {"domain": [0, 100]}},
+          "y": {"type": "quantitative", "field": "valid_value", "scale": {"domain": [0, 100]}, "axis": {"title": "Percentage"}},
           "opacity": {"value": 0.7}
         }
       }
     ],
-    "config": {"axisY": {"grid": false, "title": null}, "axisX": {"labelFontSize": 12}}
-  }
-  
+    "config": {"axisY": {"grid": false}, "axisX": {"labelFontSize": 12}}
+}
