@@ -37,39 +37,17 @@
         "filter": "isValid(datum.Continent) && (Continent_selection == null || datum.Continent == Continent_selection)"
       },
       {
-        "filter": "isValid(datum['Access to electricity (% of population)']) && isValid(datum['Access to clean fuels for cooking']) && isValid(datum['Renewable-electricity-generating-capacity-per-capita']) && isValid(datum['Low-carbon electricity (% electricity)']) && isValid(datum['Primary energy consumption per capita (kWh/person)'])"
-      },
-      {
-        "fold": [
-          "Renewable-electricity-generating-capacity-per-capita",
-          "Primary energy consumption per capita (kWh/person)"
-        ]
-      },
-      {
-        "joinaggregate": [
-          {"op": "min", "field": "value", "as": "min"},
-          {"op": "max", "field": "value", "as": "max"}
-        ],
-        "groupby": ["key"]
-      },
-      {
-        "filter": "datum.min !== datum.max"
-      },
-      {
-        "calculate": "(datum.value - datum.min) / (datum.max - datum.min)",
-        "as": "norm_val"
-      },
-      {
         "fold": [
           "Access to electricity (% of population)",
           "Access to clean fuels for cooking",
-          "Low-carbon electricity (% electricity)"
-        ],
-        "as": ["key", "value"]
+          "Low-carbon electricity (% electricity)",
+          "Renewable-electricity-generating-capacity-per-capita_normalized",
+          "Primary energy consumption per capita (kWh/person)_normalized"
+        ]
       },
       {
-        "calculate": "datum.key !== 'Access to electricity (% of population)' && datum.key !== 'Access to clean fuels for cooking' && datum.key !== 'Low-carbon electricity (% electricity)' ? datum.norm_val * 100 : datum.value",
-        "as": "final_val"
+        "calculate": "isValid(datum.value) ? datum.value : null",
+        "as": "valid_value"
       }
     ],
     "layer": [
@@ -99,7 +77,7 @@
           },
           "detail": {"type": "nominal", "field": "Entity"},
           "x": {"type": "ordinal", "field": "key", "sort": null},
-          "y": {"type": "quantitative", "field": "final_val", "scale": {"domain": [0, 100]}, "axis": {"format": "%"}},
+          "y": {"type": "quantitative", "field": "valid_value", "scale": {"domain": [0, 100]}, "axis": {"format": "%"}},
           "opacity": {"value": 0.7}
         }
       }
