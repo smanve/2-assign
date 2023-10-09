@@ -77,7 +77,7 @@
           },
           "detail": {"type": "nominal", "field": "Entity"},
           "x": {"type": "ordinal", "field": "key", "sort": null},
-          "y": {"type": "quantitative", "field": "valid_value", "scale": {"domain": [0, 100]}, "axis": {"format": "%"}},
+          "y": {"type": "quantitative", "field": "valid_value", "scale": {"domain": [0, 100]}},
           "opacity": {"value": 0.7}
         }
       }
