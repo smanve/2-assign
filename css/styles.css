@@ -1,0 +1,81 @@
+/* Base styling */
+* {
+    font-family: 'Andada Pro', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #afc9e9; /* Light blue background */
+    color: #333;  /* Text color */
+    line-height: 1.6;
+}
+.main-title {
+    background-color: rgba(255, 255, 255, 0.8); /* white with 80% opacity */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.main-title h1 {
+    font-size: 48px; /* increased font size */
+    font-weight: bold;
+    color: #333; /* text color */
+}
+
+.page {
+    width: 95%;  /* Changed to percentage for responsiveness and wider view */
+    max-width: 1400px;  /* Maximum width so it doesn’t get too wide on large screens */
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Titles and Headers */
+h1, h2 {
+    margin-bottom: 5px;  /* Space below headers */
+}
+
+/* Visualization containers */
+.vis-container {
+    width: 60%;  /* Adjusted width to make space for the text */
+    height: auto;
+    display: inline-block; /* Changed from float to inline-block */
+}
+
+/* Descriptions */
+.description {
+    margin: 20px 0;
+    font-size: medium;
+    display: inline-block; /* Added inline-block */
+    vertical-align: top; /* Aligns the top of the element with the top of the tallest element in the line */
+    width: 35%; /* Set width to occupy remaining space */
+}
+
+/* Adjustments for layout and spacing */
+.pure-g {
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: whitesmoke;  /* Changed to whitesmoke */
+    overflow: hidden; /* Added to contain floated children */
+}
+
+.pure-u-1-2 {
+    width: 100%;  /* Updated to full width */
+    box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
+}
+
+/* Additional custom styling */
+.bolder {
+    font-weight: bold;
+}
+
+.small-font {
+    font-size: 14px;
+}
+
+.divider {
+    height: 50px;
+}

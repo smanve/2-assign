@@ -6,82 +6,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Energy Use Visualization</title>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
-
-    <style>
-        body {
-            background-color: #e6f7ff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            background-color: whitesmoke;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 10px;
-            width: 80%;
-        }
-
-        .visualization {
-            display: flex;
-            align-items: center;
-            margin: 20px;
-            padding: 20px;
-        }
-
-        .title {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 18px;
-            margin-bottom: 20px;
-            flex: 1;
-            padding: 20px;
-        }
-    </style>
-
+    <!-- Import Vega & Vega-Lite -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <!-- Import Pure CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
-    <div class="container">
-        <div class="visualization">
-            <div id="choropleth"></div>
-            <div>
-                <div class="title">Choropleth Visualization</div>
-                <div class="subtitle">A Geographic Representation of Energy Consumption Across Different Regions in a Selected Year.</div>
+<body class="main">
+    <div class="page">
+        
+        <div class="main-title vis-card">
+            <h1>Energy Use Around the World</h1>
+        </div>
+
+        <!-- Choropleth Visualization -->
+        <div class="p1 vis-card">
+            <div class="pure-g title">
+                <div class="pure-u-1-1">
+                    <h2>Choropleth Visualization</h2>
+                </div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <div id="choropleth" class="vis-container"></div>
+                </div>
+                <div class="pure-u-1-2">
+                    <p class="description-right">A Geographic Representation of Energy Consumption Across Different Regions in a Selected Year.</p>
+                </div>
             </div>
         </div>
 
-        <div class="visualization">
-            <div id="scatter"></div>
-            <div>
-                <div class="title">Scatter Plot Visualization</div>
-                <div class="subtitle">Comparative Analysis of Access to Electricity and Energy Consumption per Capita.</div>
+        <!-- Scatter Plot Visualization -->
+        <div class="divider"></div>
+        <div class="p1 vis-card">
+            <div class="pure-g title">
+                <div class="pure-u-1-1">
+                    <h2>Scatter Plot Visualization</h2>
+                </div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <div id="scatter" class="vis-container"></div>
+                </div>
+                <div class="pure-u-1-2">
+                    <p class="description-right">Comparative Analysis of Access to Electricity and Energy Consumption per Capita.</p>
+                </div>
             </div>
         </div>
 
-        <div class="visualization">
-            <div id="parallel"></div>
-            <div>
-                <div class="title">Parallel Coordinates Visualization</div>
-                <div class="subtitle">Explore multidimensional data. Each line represents a different data point in parallel coordinates.</div>
+        <!-- Parallel Coordinates Visualization -->
+        <div class="divider"></div>
+        <div class="p1 vis-card">
+            <div class="pure-g title">
+                <div class="pure-u-1-1">
+                    <h2>Parallel Coordinates Visualization</h2>
+                </div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <div id="parallel" class="vis-container"></div>
+                </div>
+                <div class="pure-u-1-2">
+                    <p class="description-right">Visual representation of multi-dimensional data, excellent for comparative analysis of dataset with many attributes.</p>
+                </div>
             </div>
         </div>
 
-        <div class="visualization">
-            <div id="stackedArea"></div>
-            <div>
-                <div class="title">Stacked Area Chart Visualization</div>
-                <div class="subtitle">Representation of quantitative data in the form of a stacked area chart to visualize part-to-whole relationships over time.</div>
+        <!-- Stacked Area Chart Visualization -->
+        <div class="divider"></div>
+        <div class="p1 vis-card">
+            <div class="pure-g title">
+                <div class="pure-u-1-1">
+                    <h2>Stacked Area Chart Visualization</h2>
+                </div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <div id="stackedArea" class="vis-container"></div>
+                </div>
+                <div class="pure-u-1-2">
+                    <p class="description-right">A visualization depicting part-to-whole relationships over time, showcasing the distribution of various energy types.</p>
+                </div>
             </div>
         </div>
     </div>
