@@ -1,5 +1,21 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "style": {"cell": {"stroke": "transparent"}},
+    "title": {
+      "font": "Andada Pro, serif",
+      "subtitleFont": "Andada Pro, serif"
+    },
+    "axis": {
+      "labelFont": "Andada Pro, serif",
+      "titleFont": "Andada Pro, serif"
+    },
+    "legend": {
+      "labelFont": "Andada Pro, serif",
+      "titleFont": "Andada Pro, serif"
+    }
+  },
+  "background": "whitesmoke",
   "data": {
     "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/merged_data.csv"
   },

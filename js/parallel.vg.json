@@ -5,6 +5,7 @@
     },
     "width": 700,
     "height": 400,
+    "background": "whitesmoke",
     "params": [
       {
         "name": "Continent_selection",
@@ -82,5 +83,18 @@
         }
       }
     ],
-    "config": {"axisY": {"grid": false}, "axisX": {"labelFontSize": 12}}
-}
+    "config": {"axisY": {"grid": false}, "axisX": {"labelFontSize": 12},
+    "style": {"cell": {"stroke": "transparent"},
+    "title": {
+      "font": "Andada Pro, sans-serif",
+      "subtitleFont": "Andada Pro, sans-serif"
+    },
+    "axis": {
+      "labelFont": "Andada Pro, sans-serif",
+      "titleFont": "Andada Pro, serif"
+    },
+    "legend": {
+      "labelFont": "Andada Pro, sans-serif",
+      "titleFont": "Andada Pro, sans-serif"
+    }}}
+  }

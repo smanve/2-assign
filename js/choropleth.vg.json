@@ -15,7 +15,7 @@
     },
     "width": 800,
     "height": 400,
-    "background": null,
+    "background": "whitesmoke",
     "config": {"style": {"cell": {"stroke": "transparent"},
     "title": {
       "font": "Andada Pro, sans-serif",
