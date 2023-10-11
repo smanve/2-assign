@@ -63,16 +63,16 @@
       
         "style": {"cell": {"stroke": "transparent"}},
         "title": {
-          "font": "Andada Pro, serif",
-          "subtitleFont": "Andada Pro, serif"
+          "font": "Andada Pro, sans-serif",
+          "subtitleFont": "Andada Pro, sans-serif"
         },
         "axis": {
-          "labelFont": "Andada Pro, serif",
-          "titleFont": "Andada Pro, serif"
+          "labelFont": "Andada Pro, sans-serif",
+          "titleFont": "Andada Pro, sans-serif"
         },
         "legend": {
-          "labelFont": "Andada Pro, serif",
-          "titleFont": "Andada Pro, serif"
+          "labelFont": "Andada Pro, sans-serif",
+          "titleFont": "Andada Pro, sans-serif"
         }
 
     }

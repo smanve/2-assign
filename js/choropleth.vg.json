@@ -23,7 +23,7 @@
     },
     "axis": {
       "labelFont": "Andada Pro, sans-serif",
-      "titleFont": "Andada Pro, serif"
+      "titleFont": "Andada Pro, sans-serif"
     },
     "legend": {
       "labelFont": "Andada Pro, sans-serif",
