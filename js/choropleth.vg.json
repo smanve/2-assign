@@ -7,6 +7,7 @@
         "sources between 1966 - 2020"
       ],
       "subtitle": "Source: ourworldindata.org",
+      "subtitleFont": "Andada Pro, sans-serif",
       "subtitleFontStyle": "italic",
       "subtitleFontSize": 10,
       "anchor": "start",
@@ -15,7 +16,19 @@
     "width": 800,
     "height": 400,
     "background": null,
-    "config": {"style": {"cell": {"stroke": "transparent"}}},
+    "config": {"style": {"cell": {"stroke": "transparent"},
+    "title": {
+      "font": "Andada Pro, sans-serif",
+      "subtitleFont": "Andada Pro, sans-serif"
+    },
+    "axis": {
+      "labelFont": "Andada Pro, sans-serif",
+      "titleFont": "Andada Pro, serif"
+    },
+    "legend": {
+      "labelFont": "Andada Pro, sans-serif",
+      "titleFont": "Andada Pro, sans-serif"
+    }}},
     "params": [
       {
         "name": "Year",
