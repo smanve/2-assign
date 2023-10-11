@@ -1,80 +1,100 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "GDP per Capita Over Time",
-    "width": 600,
-    "height": 300,
-    "background": "whitesmoke",
-    "data": {
-      "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/merged_data.csv"
-    },
-    "transform": [
-      {"filter": "datum.Entity === 'Australia' || datum.Entity === 'India' || datum.Entity === 'Chile' || datum.Entity === 'Fiji' || datum.Entity === 'Germany' || datum.Entity === 'Nigeria' || datum.Entity === 'South Africa' || datum.Entity === 'Turkey'"}
-    ],
-    "layer": [
-      {
-        "mark": "area",
-        "encoding": {
-          "x": {
-            "field": "Year",
-            "type": "ordinal",
-            "title": "Year",
-            "axis": {
-              "values": [
-                2000,
-                2003,
-                2006,
-                2009,
-                2012,
-                2015,
-                2020
-              ]
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": ["GDP per Capita Over Time"],
+  "subtitle": "Please Select the Legend to filter countries",
+      "subtitleFont": "Andada Pro, sans-serif",
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "black"},
+  "width": 600,
+  "height": 400,
+  "background": "whitesmoke",
+  "data": {
+    "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/merged_data.csv"
+  },
+  "transform": [
+    {"filter": "datum.Entity === 'Australia' || datum.Entity === 'India' || datum.Entity === 'Chile' || datum.Entity === 'Fiji' || datum.Entity === 'Germany' || datum.Entity === 'Nigeria' || datum.Entity === 'South Africa' || datum.Entity === 'Turkey'"}
+  ],
+  "vconcat": [
+    {
+      "width": 600,
+      "height": 300,
+      "layer": [
+        {
+          "mark": "area",
+          "selection": {
+            "selectedCountry": {
+              "type": "single",
+              "fields": ["Entity"],
+              "bind": "legend"
             }
           },
-          "y": {
-            "field": "gdp_per_capita",
-            "type": "quantitative",
-            "stack": "zero",
-            "title": "GDP per Capita"
-          },
-          "color": {
-            "field": "Entity",
-            "type": "nominal",
-            "title": "Country",
-            "scale": {
-              "scheme": "tableau10"
-            }
-          },
-          "tooltip": [
-            {"field": "Entity", "type": "nominal", "title": "Country"},
-            {"field": "Year", "type": "ordinal", "title": "Year"},
-            {
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "ordinal",
+              "title": "Year",
+              "axis": {"tickCount": 7, "labelAngle": -45}
+            },
+            "y": {
               "field": "gdp_per_capita",
               "type": "quantitative",
+              "stack": "zero",
               "title": "GDP per Capita"
+            },
+            "color": {
+              "field": "Entity",
+              "type": "nominal",
+              "title": "Country",
+              "scale": {"scheme": "tableau10"}
+            },
+            "opacity": {
+              "condition": {"selection": "selectedCountry", "value": 1},
+              "value": 0.2
             }
-          ]
+          }
+        }
+      ]
+    },
+    {
+      "width": 600,
+      "height": 100,
+      "transform": [{"filter": {"selection": "selectedCountry"}}],
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {"tickCount": 7, "labelAngle": -45}
+        },
+        "y": {
+          "field": "gdp_growth",
+          "type": "quantitative",
+          "title": "GDP Growth"
+        },
+        "color": {
+          "field": "Entity",
+          "type": "nominal"
         }
       }
-    ],
-    "config": {
-      "view": {
-        "stroke": "transparent"
-      },
-      
-        "style": {"cell": {"stroke": "transparent"}},
-        "title": {
-          "font": "Andada Pro, sans-serif",
-          "subtitleFont": "Andada Pro, sans-serif"
-        },
-        "axis": {
-          "labelFont": "Andada Pro, sans-serif",
-          "titleFont": "Andada Pro, sans-serif"
-        },
-        "legend": {
-          "labelFont": "Andada Pro, sans-serif",
-          "titleFont": "Andada Pro, sans-serif"
-        }
-
+    }
+  ],
+  "config": {
+    "view": {"stroke": "transparent"},
+    "style": {"cell": {"stroke": "transparent"}},
+    "title": {
+      "font": "Andada Pro, sans-serif",
+      "subtitleFont": "Andada Pro, sans-serif"
+    },
+    "axis": {
+      "labelFont": "Andada Pro, sans-serif",
+      "titleFont": "Andada Pro, sans-serif"
+    },
+    "legend": {
+      "labelFont": "Andada Pro, sans-serif",
+      "titleFont": "Andada Pro, sans-serif"
     }
   }
-  
+}
