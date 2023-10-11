@@ -83,7 +83,7 @@
         }
       }
     ],
-    "config": {"axisY": {"grid": false}, "axisX": {"labelFontSize": 12},
+    "config": {"axisY": {"grid": false},
     "style": {"cell": {"stroke": "transparent"},
     "title": {
       "font": "Andada Pro, sans-serif",
