@@ -9,22 +9,40 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
 
     <style>
-        .visualizations {
+        body {
+            background-color: #e6f7ff;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: whitesmoke;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 80%;
+        }
+
+        .visualization {
+            display: flex;
+            align-items: center;
+            margin: 20px;
             padding: 20px;
         }
-        .visualization {
-            margin: 20px;
-        }
+
         .title {
             font-size: 24px;
             margin-bottom: 10px;
         }
+
         .subtitle {
             font-size: 18px;
             margin-bottom: 20px;
+            flex: 1;
+            padding: 20px;
         }
     </style>
 
@@ -34,34 +52,53 @@
 </head>
 
 <body>
-    <div class="pure-g">
-        <div class="pure-u-1-1">
-            <div class="visualizations">
-                <div class="visualization">
-                    <div class="title">Choropleth Visualization</div>
-                    <div class="subtitle">A Geographic Representation of Energy Consumption Across Different Regions in a Selected Year.</div>
-                    <div id="choropleth"></div>
-                </div>
-                <div class="visualization">
-                    <div class="title">Scatter Plot Visualization</div>
-                    <div class="subtitle">Comparative Analysis of Access to Electricity and Energy Consumption per Capita.</div>
-                    <div id="scatter"></div>
-                </div>
+    <div class="container">
+        <div class="visualization">
+            <div id="choropleth"></div>
+            <div>
+                <div class="title">Choropleth Visualization</div>
+                <div class="subtitle">A Geographic Representation of Energy Consumption Across Different Regions in a Selected Year.</div>
+            </div>
+        </div>
+
+        <div class="visualization">
+            <div id="scatter"></div>
+            <div>
+                <div class="title">Scatter Plot Visualization</div>
+                <div class="subtitle">Comparative Analysis of Access to Electricity and Energy Consumption per Capita.</div>
+            </div>
+        </div>
+
+        <div class="visualization">
+            <div id="parallel"></div>
+            <div>
+                <div class="title">Parallel Coordinates Visualization</div>
+                <div class="subtitle">Explore multidimensional data. Each line represents a different data point in parallel coordinates.</div>
+            </div>
+        </div>
+
+        <div class="visualization">
+            <div id="stackedArea"></div>
+            <div>
+                <div class="title">Stacked Area Chart Visualization</div>
+                <div class="subtitle">Representation of quantitative data in the form of a stacked area chart to visualize part-to-whole relationships over time.</div>
             </div>
         </div>
     </div>
 
     <script type="text/javascript">
-        var choroplethUrl = "https://raw.githubusercontent.com/smanve/2-assign/main/js/choropleth.vg.json";
-        var scatterUrl = "https://raw.githubusercontent.com/smanve/2-assign/main/js/scatter.vg.json";
+        var urls = {
+            choropleth: "https://raw.githubusercontent.com/smanve/2-assign/main/js/choropleth.vg.json",
+            scatter: "https://raw.githubusercontent.com/smanve/2-assign/main/js/scatter.vg.json",
+            parallel: "https://raw.githubusercontent.com/smanve/2-assign/main/js/parallel.vg.json",
+            stackedArea: "https://raw.githubusercontent.com/smanve/2-assign/main/js/stacked-area.vg.json"
+        };
 
-        vegaEmbed('#choropleth', choroplethUrl).then(function (result) {
-            // Access the Vega View instance as result.view
-        }).catch(console.error);
-
-        vegaEmbed('#scatter', scatterUrl).then(function (result) {
-            // Access the Vega View instance as result.view
-        }).catch(console.error);
+        Object.keys(urls).forEach(key => {
+            vegaEmbed(`#${key}`, urls[key]).then(function (result) {
+                // Access the Vega View instance as result.view
+            }).catch(console.error);
+        });
     </script>
 </body>
 

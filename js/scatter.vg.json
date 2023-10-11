@@ -3,8 +3,8 @@
   "data": {
     "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/merged_data.csv"
   },
-  "width": 800,
-  "height": 400,
+  "width": 600,
+  "height": 300,
   "params": [
     {
       "name": "Year",

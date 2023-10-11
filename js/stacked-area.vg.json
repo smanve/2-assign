@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "GDP per Capita Over Time",
-    "width": 1000,
-    "height": 400,
+    "width": 600,
+    "height": 300,
     "background": "whitesmoke",
     "data": {
       "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/merged_data.csv"
