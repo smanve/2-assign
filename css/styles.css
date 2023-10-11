@@ -74,6 +74,7 @@ h1, h2 {
 .p1.vis-card {
     margin-top: 10px; /* Adjust this value to increase/decrease space */
     padding-top: 10px; /* Adjust this value to increase/decrease space */
+    margin-bottom: 20px; /* Adjust this value to increase/decrease space */
 }
 
 /* Additional custom styling */
@@ -86,5 +87,5 @@ h1, h2 {
 }
 
 .divider {
-    height: 50px;
+    height: 30px;
 }
