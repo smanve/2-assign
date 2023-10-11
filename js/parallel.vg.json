@@ -5,7 +5,7 @@
     },
     "width": 700,
     "height": 400,
-    "background": "#ffffff",
+    "background": "whitesmoke",
     "params": [
       {
         "name": "Continent_selection",
@@ -84,9 +84,6 @@
       }
     ],
     "config": {"axisY": {"grid": false}, "axisX": {"labelFontSize": 12},
-    "view": {
-      "stroke": "transparent"
-    },
     "style": {"cell": {"stroke": "transparent"},
     "title": {
       "font": "Andada Pro, sans-serif",
