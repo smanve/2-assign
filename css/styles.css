@@ -14,7 +14,7 @@ body {
 .main-title {
     background-color: rgba(255, 255, 255, 0.8); /* white with 80% opacity */
     padding: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     border-radius: 10px;
     text-align: center;
 }
@@ -61,10 +61,19 @@ h1, h2 {
     background-color: whitesmoke;  /* Changed to whitesmoke */
     overflow: hidden; /* Added to contain floated children */
 }
-
+/* Visualization title styling */
+.pure-g.title {
+    margin-bottom: 10px; /* Adjust this value to increase/decrease space */
+    padding: 10px; /* Adjust padding as needed */
+}
 .pure-u-1-2 {
     width: 100%;  /* Updated to full width */
     box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
+}
+/* Adjust space between visualization title and content */
+.p1.vis-card {
+    margin-top: 10px; /* Adjust this value to increase/decrease space */
+    padding-top: 10px; /* Adjust this value to increase/decrease space */
 }
 
 /* Additional custom styling */
