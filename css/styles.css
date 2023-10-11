@@ -13,11 +13,11 @@ body {
     background-image: url('../GdxMCJk.jpeg'); /* Adjust with the path to your image */
     background-size: cover; /* Ensure your image covers the whole page */
     background-position: center; /* Center the image */
-    background-attachment: fixed; /* Fix the background image */
+    /*background-attachment: fixed; Fix the background image */
     background-repeat: no-repeat; /* Do not repeat the image */
 }
 .main-title {
-    background-color: rgba(255, 255, 255, 0.8); /* white with 80% opacity */
+    background-color: whitesmoke; /* white with 80% opacity */
     padding: 60px;
     margin-bottom: 40px;
     border-radius: 10px;
