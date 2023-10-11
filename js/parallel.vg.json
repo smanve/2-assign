@@ -5,7 +5,7 @@
     },
     "width": 700,
     "height": 400,
-    "background": "#ffffff",
+    "background": "whitesmoke",
     "params": [
       {
         "name": "Continent_selection",
