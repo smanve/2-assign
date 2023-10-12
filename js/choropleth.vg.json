@@ -13,7 +13,7 @@
       "anchor": "start",
       "color": "black"
     },
-    "width": 800,
+    "width": 600,
     "height": 400,
     "background": "whitesmoke",
     "config": {"style": {"cell": {"stroke": "transparent"},

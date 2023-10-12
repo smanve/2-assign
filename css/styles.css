@@ -54,7 +54,7 @@ h1, h2 {
     margin: 20px 0;
     font-size: medium;
     display: inline-block; /* Added inline-block */
-    vertical-align: top; /* Aligns the top of the element with the top of the tallest element in the line */
+    vertical-align: text-top; /* Aligns the top of the element with the top of the tallest element in the line */
     width: 35%; /* Set width to occupy remaining space */
 }
 
@@ -93,4 +93,12 @@ h1, h2 {
 
 .divider {
     height: 30px;
+}
+
+.description-right p {
+    font-size: 14px;  /* Reduced font size */
+    line-height: 1.4;  /* Reduced line height */
+    columns: 2;  /* Divides the content into two columns */
+    column-gap: 20px;  /* Adjusts the gap between columns */
+    max-width: 400px; /* Adjust the maximum width to avoid columns being too narrow */
 }
