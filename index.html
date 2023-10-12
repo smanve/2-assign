@@ -18,7 +18,7 @@
 
 <body class="main">
     <div class="page">
-        
+
         <div class="main-title vis-card">
             <h1>Energy Use Around the World</h1>
         </div>
@@ -33,6 +33,7 @@
             <div class="pure-g">
                 <div class="pure-u-1-2">
                     <div id="choropleth" class="vis-container"></div>
+                    <button id="playButtonChoropleth" class="pure-button pure-button-primary">Play</button>
                 </div>
                 <div class="pure-u-1-2">
                     <p class="description-right">A Geographic Representation of Energy Consumption Across Different Regions in a Selected Year.</p>
@@ -51,6 +52,7 @@
             <div class="pure-g">
                 <div class="pure-u-1-2">
                     <div id="scatter" class="vis-container"></div>
+                    <button id="playButtonScatter" class="pure-button pure-button-primary">Play</button>
                 </div>
                 <div class="pure-u-1-2">
                     <p class="description-right">Comparative Analysis of Access to Electricity and Energy Consumption per Capita.</p>
@@ -102,13 +104,59 @@
             parallel: "https://raw.githubusercontent.com/smanve/2-assign/main/js/parallel.vg.json",
             stackedArea: "https://raw.githubusercontent.com/smanve/2-assign/main/js/stacked-area.vg.json"
         };
-
+    
+        var interval = null;
+        
+        // A generalized function to animate years for any given view
+        function animateView(view, startYear = 2000, endYear = 2020) {
+            var year = startYear;
+            interval = setInterval(function() {
+                if(year > endYear) {
+                    clearInterval(interval);
+                    interval = null;
+                    return;
+                }
+                view.signal('Year', year).run();
+                year++;
+            }, 500);
+        }
+    
+        // Function to stop the animation
+        function stopAnimation() {
+            if (interval) {
+                clearInterval(interval);
+                interval = null;
+            }
+        }
+    
+        // Function to toggle between playing and pausing the animation
+        function toggleAnimation(button, view, startYear, endYear) {
+            if (interval) {
+                stopAnimation();
+                button.textContent = 'Play';
+            } else {
+                animateView(view, startYear, endYear);
+                button.textContent = 'Pause';
+            }
+        }
+    
+        // Rendering visualizations and adding event listeners for play/pause buttons
         Object.keys(urls).forEach(key => {
             vegaEmbed(`#${key}`, urls[key]).then(function (result) {
                 // Access the Vega View instance as result.view
+                if (key === 'scatter') {
+                    document.getElementById('playButtonScatter').addEventListener('click', function() {
+                        toggleAnimation(this, result.view, 2000, 2020);
+                    });
+                } else if (key === 'choropleth') {
+                    document.getElementById('playButtonChoropleth').addEventListener('click', function() {
+                        toggleAnimation(this, result.view, 1966, 2020);
+                    });
+                }
             }).catch(console.error);
         });
     </script>
+    
 </body>
 
 </html>
