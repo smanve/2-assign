@@ -55,7 +55,7 @@
       {
         "mark": {"type": "rule", "color": "#ccc"},
         "encoding": {
-          "x": {"type": "ordinal", "field": "key", "sort": null, "axis": {"labelAngle": -45, "title": null, "labels": true, "labelExpr": "datum.label === 'Access to electricity (% of population)' ? 'Electricity Access (%)' : datum.label === 'Access to clean fuels for cooking' ? 'Clean Fuels (%)' : datum.label === 'Low-carbon electricity (% electricity)' ? 'Low-carbon Elec. (%)' : datum.label === 'Renewable-electricity-generating-capacity-per-capita_normalized' ? 'Renewable Electricity (%)' : 'Primary Energy Use (%)'"}}
+          "x": {"type": "ordinal","field": "key", "sort": null, "axis": {"labelAngle": -45, "title": null,"labelFontWeight":"bold", "labels": true, "labelExpr": "datum.label === 'Access to electricity (% of population)' ? 'Electricity Access (%)' : datum.label === 'Access to clean fuels for cooking' ? 'Clean Fuels (%)' : datum.label === 'Low-carbon electricity (% electricity)' ? 'Low-carbon Elec. (%)' : datum.label === 'Renewable-electricity-generating-capacity-per-capita_normalized' ? 'Renewable Electricity (%)' : 'Primary Energy Use (%)'"}}
         }
       },
       {
