@@ -19,7 +19,7 @@ body {
 .main-title {
     background-color: whitesmoke; /* white with 80% opacity */
     padding: 60px;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
     border-radius: 10px;
     text-align: center;
 }
@@ -42,63 +42,89 @@ h1, h2 {
     margin-bottom: 5px;  /* Space below headers */
 }
 
+/* ... existing CSS ... */
+
 /* Visualization containers */
 .vis-container {
-    width: 60%;  /* Adjusted width to make space for the text */
     height: auto;
-    display: inline-block; /* Changed from float to inline-block */
+    display: inline-block;
 }
 
 /* Descriptions */
 .description {
     margin: 20px 0;
     font-size: medium;
-    display: inline-block; /* Added inline-block */
-    vertical-align: text-top; /* Aligns the top of the element with the top of the tallest element in the line */
-    width: 35%; /* Set width to occupy remaining space */
+    display: inline-block;
+    vertical-align: text-top;
 }
 
-/* Adjustments for layout and spacing */
 .pure-g {
-    margin-bottom: 25px;
-    padding: 20px;
+    margin-bottom: 50px;
+    padding: 15px;
     border-radius: 10px;
-    background-color: whitesmoke;  /* Changed to whitesmoke */
-    overflow: hidden; /* Added to contain floated children */
+    background-color: whitesmoke;
+    overflow: hidden;
 }
-/* Visualization title styling */
-.pure-g.title {
-    margin-bottom: 10px; /* Adjust this value to increase/decrease space */
-    padding: 10px; /* Adjust padding as needed */
-}
+
 .pure-u-1-2 {
-    width: 100%;  /* Updated to full width */
-    box-sizing: border-box; /* Added to include padding and border in the element's total width and height */
-}
-/* Adjust space between visualization title and content */
-.p1.vis-card {
-    margin-top: 10px; /* Adjust this value to increase/decrease space */
-    padding-top: 10px; /* Adjust this value to increase/decrease space */
-    margin-bottom: 20px; /* Adjust this value to increase/decrease space */
-}
-
-/* Additional custom styling */
-.bolder {
-    font-weight: bold;
-}
-
-.small-font {
-    font-size: 14px;
-}
-
-.divider {
-    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid red;
+    float: left;
+    margin: 0;
+    padding: 0;
 }
 
 .description-right p {
-    font-size: 14px;  /* Reduced font size */
-    line-height: 1.4;  /* Reduced line height */
-    columns: 2;  /* Divides the content into two columns */
-    column-gap: 20px;  /* Adjusts the gap between columns */
-    max-width: 400px; /* Adjust the maximum width to avoid columns being too narrow */
+    font-size: 14px;
+    line-height: 1.4;
+    columns: 2;
+    column-gap: 20px;
+    padding-left: 5%;
+}
+
+.pure-g {
+    width: 100% !important;
+}
+
+.pure-g:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.pure-u-1-2, .vis-container, .description-right {
+    overflow: visible;
+}
+/* Visualization title styling */
+.pure-g.title {
+    margin-bottom: 15px; /* Decreased space below visualization title */
+    padding: 15px; 
+}
+
+/* Adjust Play/Pause button position */
+#playButtonChoropleth, #playButtonScatter {
+    position: relative;
+    left: -500px; /* Adjust this value to move it more or less to the left */
+    bottom: 4px; /* Adjust this value to move it up or down */
+    width: 100px; /* Set a fixed width that accommodates both "Play" and "Pause" */
+    text-align: center; /* Center the text within the button */
+}
+/* Play/Pause Button Styling */
+#playButtonChoropleth, #playButtonScatter {
+    background-color: #afc9e9; /* Light blue to match your page background color */
+    color: #333; /* Text color to match your main color */
+    border: none; /* Removes the default border */
+    padding: 10px 20px; /* Increases the button size slightly */
+    border-radius: 5px; /* Rounds the edges */
+    font-weight: bold; /* Makes the text bolder */
+    cursor: pointer; /* Changes cursor to a hand when hovering */
+    transition: background-color 0.3s; /* Adds a transition effect */
+}
+
+#playButtonChoropleth:hover, #playButtonScatter:hover {
+    background-color: #8eaac4; /* Darker shade of blue for hover effect */
 }

@@ -94,7 +94,9 @@
           "color": {
             "field": "Primary energy consumption per capita (kWh/person)",
             "type": "quantitative",
-            "legend": {"title": "Normalized Energy(kWh/person)"}
+            "legend": {"title": "Normalized Energy(kWh/person)"},
+            "scale": {
+              "domain": [0, 200000]
           },
           "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},
