@@ -30,7 +30,7 @@
         "min": 2000,
         "max": 2020,
         "step": 1,
-        "name": "Select Year"
+        "name": "Select the Year: "
       }
     }
   ],
