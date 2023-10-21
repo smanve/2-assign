@@ -96,7 +96,7 @@
             "type": "quantitative",
             "legend": {"title": "Normalized Energy(kWh/person)"},
             "scale": {
-              "domain": [0, 265000]
+              "domain": [0, 265000] }
           },
           "tooltip": [
             {"field": "properties.NAME", "type": "nominal", "title": "Country"},
