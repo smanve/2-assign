@@ -56,6 +56,7 @@ h1, h2 {
     font-size: medium;
     display: inline-block;
     vertical-align: text-top;
+    width: 60%;
 }
 
 .pure-g {
@@ -127,4 +128,18 @@ h1, h2 {
 
 #playButtonChoropleth:hover, #playButtonScatter:hover {
     background-color: #8eaac4; /* Darker shade of blue for hover effect */
+}
+
+.description-right .single {
+    font-size: 14px;
+    line-height: 1.4;
+    padding-left: 5%;
+}
+
+.description-right .column-content {
+    columns: 2;
+    column-gap: 20px;
+    font-size: 14px;
+    line-height: 1.4;
+    padding-left: 5%;
 }
