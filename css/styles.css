@@ -13,9 +13,9 @@ body {
     background-image: url('../GdxMCJk.jpeg'); /* Adjust with the path to your image */
     background-size: cover; /* Ensure your image covers the whole page */
     background-position: center; /* Center the image */
-    /*background-attachment: fixed; Fix the background image */
     background-repeat: no-repeat; /* Do not repeat the image */
 }
+
 .main-title {
     background-color: whitesmoke; /* white with 80% opacity */
     padding: 60px;
@@ -42,66 +42,32 @@ h1, h2 {
     margin-bottom: 5px;  /* Space below headers */
 }
 
-/* ... existing CSS ... */
-
-/* Visualization containers */
-.vis-container {
-    height: auto;
-    display: inline-block;
-}
-
-/* Descriptions */
-.description {
-    margin: 20px 0;
-    font-size: medium;
-    display: inline-block;
-    vertical-align: text-top;
-    width: 60%;
-}
-
-.pure-g {
+/* Flex container for visualization and description */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 50px;
     padding: 15px;
     border-radius: 10px;
     background-color: whitesmoke;
-    overflow: hidden;
 }
 
-.pure-u-1-2 {
-    box-sizing: border-box;
-    border: 1px solid red;
-    float: left;
-    margin: 0;
-    padding: 0;
+/* Flex item for visualization */
+.vis-container {
+    flex: 1; /* Adjust as needed */
+    padding-right: 20px; /* Space between visualization and description */
 }
 
-.description-right p {
-    font-size: 14px;
-    line-height: 1.4;
-    columns: 2;
-    column-gap: 20px;
-    padding-left: 5%;
+/* Flex item for description */
+.description {
+    flex: 1; /* Adjust as needed */
+    font-size: medium;
+    margin: 20px 0;
 }
 
-.pure-g {
-    width: 100% !important;
-}
-
-.pure-g:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-*, *:before, *:after {
-    box-sizing: border-box;
-}
-
-.pure-u-1-2, .vis-container, .description-right {
-    overflow: visible;
-}
 /* Visualization title styling */
-.pure-g.title {
+.vis-title {
     margin-bottom: 15px; /* Decreased space below visualization title */
     padding: 15px; 
 }
@@ -109,11 +75,12 @@ h1, h2 {
 /* Adjust Play/Pause button position */
 #playButtonChoropleth, #playButtonScatter {
     position: relative;
-    left: -500px; /* Adjust this value to move it more or less to the left */
-    bottom: 4px; /* Adjust this value to move it up or down */
+    left: -20px; /* Adjust this value to move it more or less to the left */
+    bottom: 30px; /* Adjust this value to move it up or down */
     width: 100px; /* Set a fixed width that accommodates both "Play" and "Pause" */
     text-align: center; /* Center the text within the button */
 }
+
 /* Play/Pause Button Styling */
 #playButtonChoropleth, #playButtonScatter {
     background-color: #afc9e9; /* Light blue to match your page background color */
@@ -130,16 +97,40 @@ h1, h2 {
     background-color: #8eaac4; /* Darker shade of blue for hover effect */
 }
 
-.description-right .single {
+.description-right .single, .description-right .column-content {
     font-size: 14px;
     line-height: 1.4;
     padding-left: 5%;
-}
-
-.description-right .column-content {
     columns: 2;
     column-gap: 20px;
-    font-size: 14px;
-    line-height: 1.4;
-    padding-left: 5%;
+}
+
+/* Visualization Title Card */
+.vis-title-card {
+    background-color: whitesmoke; /* Background color for the title card */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: start;
+}
+
+/* Play Button Container */
+.play-button-container {
+    text-align: center; /* Center the play button */
+}
+
+/* Play Button Styling */
+#playButtonScatter {
+    background-color: #afc9e9; /* Light blue to match your page background color */
+    color: #333; /* Text color to match your main color */
+    border: none; /* Removes the default border */
+    padding: 10px 20px; /* Increases the button size slightly */
+    border-radius: 5px; /* Rounds the edges */
+    font-weight: bold; /* Makes the text bolder */
+    cursor: pointer; /* Changes cursor to a hand when hovering */
+    transition: background-color 0.3s; /* Adds a transition effect */
+}
+
+#playButtonScatter:hover {
+    background-color: #8eaac4; /* Darker shade of blue for hover effect */
 }

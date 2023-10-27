@@ -19,115 +19,83 @@
 <body class="main">
     <div class="page">
 
-        <div class="main-title vis-card">
+        <div class="main-title">
             <h1>Energy Use Around the World</h1>
         </div>
 
         <!-- Scatter Plot Visualization -->
-        <div class="p1 vis-card">
-            <div class="pure-g title">
-                <div class="pure-u-1-1">
-                    <h2>Electrifying the Globe: Power Access Trends</h2>
-                </div>
-            </div>
-            <div class="pure-g">
-                <div class="pure-u-1-2">
-                    <div id="scatter" class="vis-container"></div>
-                    <button id="playButtonScatter" class="pure-button pure-button-primary">Play</button>
-                </div>
-                <div class="pure-u-1-2 ">
-                    <div class="pure-u-1-2 ">
-                        <div class="description">
-                            <div class="column-content">
-                                <p>For centuries, ... backbone of nations.</p>
-                                <p>Over the last two decades, ... basic access to power.</p>
-                                <p>The scatter plot ... require attention.</p>
-                                <p>As the world grapples ... different energy forms ...</p>
-                                <p>By analyzing these trends, ... left in the dark.</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="pure-u-1-2 ">
-                    <div class="pure-u-1-2 ">
-                        <div class="description-right">
-                            <div class="column-content">
-                                <p>For centuries, ... backbone of nations.</p>
-                                <p>Over the last two decades, ... basic access to power.</p>
-                                <p>The scatter plot ... require attention.</p>
-                                <p>As the world grapples ... different energy forms ...</p>
-                                <p>By analyzing these trends, ... left in the dark.</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-
-        <!-- Choropleth Visualization -->
-        <div class="divider"></div>
-<div class="p1 vis-card">
-    <div class="pure-g title">
-        <div class="pure-u-1-1">
-            <h2>Mapping the Evolution of Renewable Energy</h2>
-        </div>
+<div class="vis-card">
+    <div class="vis-title-card">
+        <h2>Electrifying the Globe: Power Access Trends</h2>
     </div>
-    <div class="pure-g">
-        <div class="pure-u-1-2">
-            <div id="choropleth" class="vis-container"></div>
-            <button id="playButtonChoropleth" class="pure-button pure-button-primary">Play</button>
-        </div>
-        <div class="pure-u-1-2 ">
-            <div class="description-right">
-                <p>,ggjjjggjjjggjgjgjgjgjgjgjgj</p>
+    <div class="flex-container">
+        <div class="vis-container">
+            <div id="scatter"></div>
+            <div class="play-button-container">
+                <button id="playButtonScatter">Play</button>
             </div>
+        </div>
+        <div class="description">
+            <p>For centuries, ... n,nkn,n,n,n,n,n,nkhhlhlhlhlhllhlhl jggjgjgjgjgj gjgjgjgjgjgj gjgjgjgjgj jgjgjgjgj gjgjgjg ggjgjg backbone of nations.</p>
+            <!-- Additional description content here -->
         </div>
     </div>
 </div>
 
 
-    
-
-        <!-- Parallel Coordinates Visualization -->
-        <div class="divider"></div>
-        <div class="p1 vis-card">
-            <div class="pure-g title">
-                <div class="pure-u-1-1">
-                    <h2>Parallel Coordinates Visualization</h2>
-                </div>
-            </div>
-            <div class="pure-g">
-                <div class="pure-u-1-2">
-                    <div id="parallel" class="vis-container"></div>
-                </div>
-                <div class="pure-u-1-2">
-                    <p class="description-right"></p>
-                </div>
+        <!-- Choropleth Visualization -->
+<div class="vis-card">
+    <div class="vis-title-card">
+        <h2>Mapping the Evolution of Renewable Energy</h2>
+    </div>
+    <div class="flex-container">
+        <div class="vis-container">
+            <div id="choropleth"></div>
+            <div class="play-button-container">
+                <button id="playButtonChoropleth">Play</button>
             </div>
         </div>
-
-        <!-- Stacked Area Chart Visualization -->
-        <div class="divider"></div>
-        <div class="p1 vis-card">
-            <div class="pure-g title">
-                <div class="pure-u-1-1">
-                    <h2>Stacked Area Chart Visualization</h2>
-                </div>
-            </div>
-            <div class="pure-g">
-                <div class="pure-u-1-2">
-                    <div id="stackedArea" class="vis-container"></div>
-                </div>
-                <div class="pure-u-1-2">
-                    <p class="description-right"></p>
-                </div>
-            </div>
+        <div class="description">
+            <p>,ggjjjggjjjggjgjgjgjgjgjgjgj</p>
         </div>
     </div>
+</div>
+
+
+
+    
+<!-- Parallel Coordinates Visualization -->
+<div class="vis-card">
+    <div class="vis-title-card">
+        <h2>Parallel Coordinates Visualization</h2>
+    </div>
+    <div class="flex-container">
+        <div class="vis-container">
+            <div id="parallel"></div>
+            <!-- No play button for this visualization as per original structure -->
+        </div>
+        <div class="description">
+            <p>Parallel coordinates description...</p>
+        </div>
+    </div>
+</div>
+
+<!-- Stacked Area Chart Visualization -->
+<div class="vis-card">
+    <div class="vis-title-card">
+        <h2>Stacked Area Chart Visualization</h2>
+    </div>
+    <div class="flex-container">
+        <div class="vis-container">
+            <div id="stackedArea"></div>
+            <!-- No play button for this visualization as per original structure -->
+        </div>
+        <div class="description">
+            <p>Stacked area chart description...</p>
+        </div>
+    </div>
+</div>
+
 
     <script type="text/javascript">
         var urls = {
