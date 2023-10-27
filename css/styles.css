@@ -51,6 +51,7 @@ h1, h2 {
     padding: 15px;
     border-radius: 10px;
     background-color: whitesmoke;
+    
 }
 
 /* Flex item for visualization */
@@ -133,4 +134,13 @@ h1, h2 {
 
 #playButtonScatter:hover {
     background-color: #8eaac4; /* Darker shade of blue for hover effect */
+}
+
+.text-box {
+    margin-top: 15px; /* Adjust as per your requirement for spacing */
+    font-size: 14px;
+    color: #333;  /* Text color */
+    background-color: whitesmoke; /* Optional: if you want a background */
+    padding: 10px; /* Padding around the text */
+    border-radius: 5px; /* Optional: for rounded corners */
 }
