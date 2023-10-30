@@ -14,7 +14,7 @@
     "url": "https://raw.githubusercontent.com/smanve/2-assign/main/data/merged_data.csv"
   },
   "transform": [
-    {"filter": "datum.Entity === 'Australia' || datum.Entity === 'India' || datum.Entity === 'Chile' || datum.Entity === 'Fiji' || datum.Entity === 'Germany' || datum.Entity === 'Nigeria' || datum.Entity === 'South Africa' || datum.Entity === 'Turkey'"}
+    {"filter": "datum.Entity === 'Australia' || datum.Entity === 'India' || datum.Entity === 'Chile' || datum.Entity === 'Fiji' || datum.Entity === 'Germany' || datum.Entity === 'Nigeria'"}
   ],
   "vconcat": [
     {
