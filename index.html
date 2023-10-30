@@ -23,10 +23,10 @@
             <h1>Energy Use Around the World</h1>
         </div>
 
-        <!-- Scatter Plot Visualization -->
+       <!-- Scatter Plot Visualization -->
 <div class="vis-card">
     <div class="vis-title-card">
-        <h2>Electrifying the Globe: Power Access Trends</h2>
+        <h2>Understanding Global Energy Dynamics: Consumption vs. Access</h2>
     </div>
     <div class="flex-container">
         <div class="vis-container">
@@ -34,13 +34,32 @@
             <div class="play-button-container">
                 <button id="playButtonScatter">Play</button>
             </div>
+            <div class="text-box">
+                <p><strong>This scatter plot shows how countries compare in two main areas:</strong></p>
+
+                <ul>
+                    <li><strong>Horizontal (X-axis):</strong> How many people in the country can use electricity.</li>
+                    <li><strong>Vertical (Y-axis):</strong> How much electricity each person uses in a year.</li>
+                </ul>
+                <br>
+                <p>Each dot represents a country. The color shows which continent the country is in, and the size of the dot tells us about the country's money (GDP).</p>
+                
+                
+            </div>
         </div>
         <div class="description">
-            <p>For centuries, ... n,nkn,n,n,n,n,n,nkhhlhlhlhlhllhlhl jggjgjgjgjgj gjgjgjgjgjgj gjgjgjgjgj jgjgjgjgj gjgjgjg ggjgjg backbone of nations.</p>
-            <!-- Additional description content here -->
+            <p>In our world today, the way we use and get electricity is a big topic. With this chart, I try to show how this works in different countries. You might think that in places where more people can get electricity, they use more of it. But that's not always true. Some countries have everyone using electricity, but they don't use a lot of it. In others, even if they <strong>use a lot of electricity, not everyone can get it.</strong></p>
+            <!-- Image and caption directly below the description -->
+            <figure>
+                <img src="wind-turbine.jpg" alt="Wind turbine image" width="400" height="200">
+                <figcaption>Wind accounted for 10 per cent of Australia's total energy generation in 2021 and more than one-third of renewable energy generated (Source: Department of Climate Change, Energy, the Environment and Water (2022) Australian Energy Statistics)</figcaption>
+            </figure>
         </div>
     </div>
 </div>
+
+
+
 
 
         <!-- Choropleth Visualization -->
@@ -55,8 +74,8 @@
                 <button id="playButtonChoropleth">Play</button>
             </div>
         </div>
-        <div class="description">
-            <p>,ggjjjggjjjggjgjgjgjgjgjgjgj</p>
+        <div class="des">
+            <p>By mapping out the annual changes in <strong>renewable energy generation</strong>, this choropleth map offers viewers a tangible, visual journey through time, highlighting the shift towards sustainable energy sources. The interactive element, allowing users to navigate through different years, engages them directly, making the data more relatable and personal. This map not only provides quantitative data but also paints a picture of the global commitment to a sustainable future. The integration of <strong>geographical distribution with energy consumption metrics</strong> underscores the interconnectedness of nations in this global endeavor. Using such a visualization, we can instantly grasp which regions are leading the way and which ones are lagging behind, making it an invaluable tool for any project focusing on world energy trends.</p>
         </div>
     </div>
 </div>
@@ -67,15 +86,19 @@
 <!-- Parallel Coordinates Visualization -->
 <div class="vis-card">
     <div class="vis-title-card">
-        <h2>Parallel Coordinates Visualization</h2>
+        <h2>Normalized metrics comparison between continents</h2>
     </div>
     <div class="flex-container">
         <div class="vis-container">
             <div id="parallel"></div>
             <!-- No play button for this visualization as per original structure -->
         </div>
-        <div class="description">
-            <p>Parallel coordinates description...</p>
+        <div class="des">
+            <p>The <strong>Parallel Coordinates Visualization</strong> is a multidimensional data representation technique that employs parallel lines to showcase various metrics or dimensions, where each line represents an attribute. In this visualization, continents are represented by different colored lines, and their respective values for metrics like <strong>"Electricity Access," "Clean Fuels," "Low-carbon Electricity," and "Primary Energy Use"</strong> are plotted along these axes.
+
+                This visual idiom is particularly useful for comparing multiple attributes across various categories simultaneously. By drawing connections between each point on these axes, we can quickly discern patterns, correlations, or disparities between different continents based on their energy metrics. The intertwined nature of the lines provides a comprehensive overview of how these metrics vary from one continent to another, making it easier to spot potential outliers or trends.
+                For this domain focusing on global energy, this visualization technique offers a unique perspective by consolidating vast amounts of data into an easily digestible format. It allows stakeholders and researchers to compare and contrast the energy profiles of entire continents, promoting a deeper understanding of the global energy landscape. By integrating this with the ability to filter by continent, users can drill down into specific areas of interest, making it a versatile tool that caters to both broad overviews and detailed examinations.
+            </p>
         </div>
     </div>
 </div>
@@ -83,24 +106,28 @@
 <!-- Stacked Area Chart Visualization -->
 <div class="vis-card">
     <div class="vis-title-card">
-        <h2>Stacked Area Chart Visualization</h2>
+        <h2>Progression of GDP per Capita over time</h2>
     </div>
     <div class="flex-container">
         <div class="vis-container">
             <div id="stackedArea"></div>
             <!-- No play button for this visualization as per original structure -->
-            <div class="text-box">
-                Your new text goes here.
-            </div>
         </div>
-        <div class="description">
-            <p>What is Lorem Ipsum?</p>
+        <div class="des">
+            <p>This <strong>Stacked Area Chart idiom</strong> vividly portrays the progression of GDP per Capita over time for various countries. Each colored section represents the GDP for a specific country, with the thickness of that section at any given year showing the GDP value. This creates a cumulative effect, where the total height of the chart at any year signifies the combined GDP of all listed countries.
+
+                The beauty of this visual idiom lies in its ability to simultaneously communicate individual and collective trends. On the individual level, one can quickly gauge how a country's GDP has evolved, with rises and falls visually presented through the ebb and flow of the color bands. Comparatively, by examining how these bands stack upon one another, we gain insights into how the economic fortunes of these nations interrelate and contribute to a larger global context.
+                
+                For a domain centered around GDP growth, this visualization is invaluable. Not only does it consolidate potentially overwhelming data into a digestible format, but it also fosters a comprehensive understanding of intricate economic landscapes. For instance, a rapid growth in one country's GDP might be juxtaposed against a decline in another's, painting a picture of shifting global economic power dynamics.
+                
+                Moreover, the secondary chart below provides a <strong>more granular view, focusing on the year-on-year GDP growth rates</strong>. By pairing <strong>these two visualizations</strong>, viewers are equipped with both a broad overview and a detailed analysis, enabling them to discern patterns, anomalies, or significant events that might have influenced these economic trajectories.
+                </p>
                 
         </div>
     </div>
     
 
-    </div>
+</div>
 </div>
 
 
@@ -162,6 +189,9 @@
                 }
             }).catch(console.error);
         });
+    
+
+        
     </script>
     
 </body>
