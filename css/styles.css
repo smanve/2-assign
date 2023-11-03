@@ -11,7 +11,7 @@ body {
     color: #333;  /* Text color */
     line-height: 1.6;
     background-image: url('../GdxMCJk.jpeg'); 
-    background-size: cover; 
+    background-size: cover; /* Resize the background image to cover the entire container */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
 }
@@ -19,7 +19,7 @@ body {
 .main-title {
     background-color: whitesmoke; /* white with 80% opacity */
     padding: 60px;
-    margin-bottom: 80px;
+    margin-bottom: 80px; /* Increased space below the title */
     border-radius: 10px;
     text-align: center;
 }
@@ -72,7 +72,7 @@ h1, h2 {
 /* Visualization title styling */
 .vis-title {
     margin-bottom: 15px; /* Decreased space below visualization title */
-    padding: 15px; 
+    padding: 15px; /* Increased padding around the title */
 }
 
 /* Adjust Play/Pause button position */
