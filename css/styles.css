@@ -10,8 +10,8 @@ body {
     background-color: #afc9e9; /* Light blue background */
     color: #333;  /* Text color */
     line-height: 1.6;
-    background-image: url('../GdxMCJk.jpeg'); /* Adjust with the path to your image */
-    background-size: cover; /* Ensure your image covers the whole page */
+    background-image: url('../GdxMCJk.jpeg'); 
+    background-size: cover; 
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
 }
@@ -66,7 +66,7 @@ h1, h2 {
     font-size: 14px;
     margin: 20px 0;
     column-count: 2; /* Divides the content into 2 columns */
-    column-gap: 20px; /* Adjust gap between columns as needed */
+    column-gap: 20px; 
 }
 
 /* Visualization title styling */
@@ -86,8 +86,8 @@ h1, h2 {
 
 /* Play/Pause Button Styling */
 #playButtonChoropleth, #playButtonScatter {
-    background-color: #afc9e9; /* Light blue to match your page background color */
-    color: #333; /* Text color to match your main color */
+    background-color: #afc9e9; 
+    color: #333; 
     border: none; /* Removes the default border */
     padding: 10px 20px; /* Increases the button size slightly */
     border-radius: 5px; /* Rounds the edges */
@@ -124,8 +124,8 @@ h1, h2 {
 
 /* Play Button Styling */
 #playButtonScatter {
-    background-color: #afc9e9; /* Light blue to match your page background color */
-    color: #333; /* Text color to match your main color */
+    background-color: #afc9e9; 
+    color: #333; 
     border: none; /* Removes the default border */
     padding: 10px 20px; /* Increases the button size slightly */
     border-radius: 5px; /* Rounds the edges */
@@ -139,17 +139,17 @@ h1, h2 {
 }
 
 .text-box {
-    margin-top: 5px; /* Adjust as per your requirement for spacing */
+    margin-top: 5px; 
     font-size: 14px;
     color: #333;  /* Text color */
-    background-color: whitesmoke; /* Optional: if you want a background */
+    background-color: whitesmoke; 
     padding: 5px; /* Padding around the text */
     border-radius: 5px; /* Optional: for rounded corners */
     font-family: 'Andada Pro', sans-serif;
 }
 
 figcaption {
-    font-size: 10px;  /* Adjust the font size according to your needs */
+    font-size: 10px;  
     color: #777;     /* Gray color for the caption */
     margin-top: 5px; /* Space above the caption */
 }
@@ -160,7 +160,7 @@ figcaption {
 
 .vis-container {
     flex: 1;
-    margin-right: 20px;  /* Adjust as necessary */
+    margin-right: 20px; 
 }
 
 .description {
@@ -171,14 +171,14 @@ figcaption {
 }
 
 figure {
-    margin-top: 10px;  /* Adjust as necessary */
+    margin-top: 10px; 
 }
 
 /* Flex item for description */
 .des {
-    flex: 1; /* Adjust as needed */
+    flex: 1; 
     font-size: 14px;
     margin: 20px 0;
     column-count: 2; /* Divides the content into 2 columns */
-    column-gap: 20px; /* Adjust gap between columns as needed */
+    column-gap: 20px; 
 }
