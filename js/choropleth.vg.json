@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Energy consumption per capita.",
+    "description": " Energy consumption per capita.",
     "title": {
       "text": [
         "Annual change in renewable energy generation",
